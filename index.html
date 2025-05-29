@@ -1,13 +1,41 @@
 <!DOCTYPE html> 
 <html>
+<head>
+	<style>
+		p {
+			text-align: center;
+			font-size: 20px;
+			font-weight: 700;
+		}
+ 		
+ 		.hide {
+			display: none;
+		}
+	</style>
+</head>
 <body>
 	<p>try kira sampai 3</p>
-	<h1 id="text"></h1>	
+	<h1 id="text" style="text-align:center; margin: 0 auto; font-style:italic"></h1>
+	<button type="button" id="myBtn" class="hide" onclick="unhideElm()" style="text-align:center; margin: 0 auto; font-style:italic"> tekan ni </button>
+	<h1 id="anotherReveal" style="font-size: 80px; text-align:center; margin: 0 auto"></h1>
 <script>
 	setTimeout(getElmt, 3000);
+	
 	function getElmt () {
-	document.getElementById("text").innerHTML = "I love you sayangg ❤️❤️❤️ !!";
+		document.getElementById("text").innerHTML = "I love you sayangg ❤️❤️❤️ !!";
+		unhideElm();
 	}
+
+	function unhideElm () {
+		var element = document.getElementById("myBtn");
+		element.classList.remove("hide");
+	}
+
+	function reveal() {
+		document.getElementById("anotherReveal").innerHTML = "NAK GAMBA SELFIE plish";	
+	}
+	
+	document.getElementById("myBtn").addEventListener("click", reveal);
 </script>
 
 </body>
