@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
 <head>
 	<style>
@@ -11,32 +11,44 @@
  		.hide {
 			display: none;
 		}
+
+		iframe {
+			display: block;
+			margin: 20px auto;
+		}
 	</style>
 </head>
 <body>
 	<p>try kira sampai 3</p>
 	<h1 id="text" style="text-align:center; margin: 0 auto; font-style:italic"></h1>
-	<button type="button" id="myBtn" class="hide" onclick="unhideElm()" style="text-align:center; margin: 0 auto; font-style:italic"> tekan ni </button>
-	<h1 id="anotherReveal" style="font-size: 80px; text-align:center; margin: 0 auto"></h1>
-<script>
-	setTimeout(getElmt, 3000);
-	
-	function getElmt () {
-		document.getElementById("text").innerHTML = "I love you sayangg ❤️❤️❤️ !!";
-		unhideElm();
-	}
+	<button type="button" id="myBtn" class="hide" onclick="unhideElm()" style="display:block; margin: 20px auto; font-style:italic"> tekan ni </button>
+	<div id="anotherReveal" style="text-align:center;"></div>
 
-	function unhideElm () {
-		var element = document.getElementById("myBtn");
-		element.classList.remove("hide");
-	}
+	<script>
+		setTimeout(getElmt, 3000);
+		
+		function getElmt () {
+			document.getElementById("text").innerHTML = "I love you sayangg ❤️❤️❤️ !!";
+			unhideElm();
+		}
 
-	function reveal() {
-		document.getElementById("anotherReveal").innerHTML = "NAK GAMBA SELFIE plish";	
-	}
-	
-	document.getElementById("myBtn").addEventListener("click", reveal);
-</script>
+		function unhideElm () {
+			var element = document.getElementById("myBtn");
+			element.classList.remove("hide");
+		}
 
+		function reveal() {
+			document.getElementById("anotherReveal").innerHTML = `
+				<h1 style="font-size: 60px; font-style: italic;">NAK GAMBA SELFIE plish 😘📸</h1>
+				<iframe width="560" height="315" 
+					src="https://www.youtube.com/embed/Kq4dbZJakMs?autoplay=1&rel=0" 
+					title="YouTube video player" frameborder="0" 
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+					allowfullscreen>
+				</iframe>`;
+		}
+		
+		document.getElementById("myBtn").addEventListener("click", reveal);
+	</script>
 </body>
 </html>
